@@ -16,8 +16,8 @@ class App extends Component {
       <div>
         <h1>React App</h1>
         <button className="btn btn-outline-primary" onClick={this.onClickBtn}>Click Me</button>
-        <Link to="/hello">Hello</Link>
-        <Link to="/bye">Bye</Link>
+        <Link className="link" to="/hello">Hello</Link>
+        <Link className="link" to="/bye">Bye</Link>
       </div>
     );
   }

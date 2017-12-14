@@ -8,8 +8,7 @@ const productionConfig = require('./webpack.production');
 
 module.exports = (env = process.env.NODE_ENV) => {
   console.log(colors.yellow('┌----------------------------------┐'));
-  console.log(colors.yellow(`   ENV: ${env}                               `));
-  console.log(colors.yellow(`   URL: http://localhost:3050                `));
+  console.log(colors.yellow(`   ENV: ${env}`));
   console.log(colors.yellow('└----------------------------------┘'));
 
   if (env === 'production') {
