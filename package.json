@@ -4,9 +4,10 @@
   "description": "react boileplate",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && NODE_ENV=production webpack -p",
+    "build": "npm run clean && NODE_ENV=production webpack -p --config config/webpack.config.js",
     "clean": "rimraf dist",
     "server": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
+    "server:production": "npm run build && http-server-spa dist",
     "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -34,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
     "html-webpack-plugin": "^2.30.1",
+    "http-server-spa": "^1.2.0",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
     "webpack": "^3.9.1",

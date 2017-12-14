@@ -5,6 +5,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import App from './components/App';
+import Hello from './components/Hello';
+import Bye from './components/Bye';
+
 import reducers from './reducers';
 
 import '../public/styles/styles.css';
@@ -20,6 +23,8 @@ ReactDOM.render(
   >
     <BrowserRouter>
       <Switch>
+        <Route path="/hello" component={Hello} />
+        <Route path="/bye" component={Bye} />
         <Route path="/" component={App} />
       </Switch>
     </BrowserRouter>

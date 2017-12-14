@@ -12,12 +12,12 @@ const VENDOR_LIBS = _.transform(pkg.dependencies, (result, value, key) => (
 
 module.exports = merge([
   {
-    entry:{
+    entry: {
       bundle: './src/index.js',
       vendor: VENDOR_LIBS,
     },
-    output:{
-      path: path.join(__dirname, 'dist'),
+    output: {
+      path: path.join(__dirname, '../dist'),
       filename: '[name].[hash].js',
     },
     plugins: [

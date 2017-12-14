@@ -1,7 +1,11 @@
+const webpack = require('webpack');
+
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
     host,
     port,
+    historyApiFallback: true,
+    contentBase: './',
     overlay: {
       errors: true,
       warnings: true,
@@ -27,3 +31,13 @@ exports.cssLoader = () => ({
     }],
   },
 })
+
+exports.devTools = () => ({
+  devtool: 'eval-source-map',
+});
+
+exports.uglifyJsPlugin = () => ({
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
+  ],
+});

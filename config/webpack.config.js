@@ -2,7 +2,6 @@ const merge = require('webpack-merge');
 const colors = require('colors/safe');
 
 const commonConfig = require('./webpack.common');
-const parts = require('./webpack.parts');
 const developmentConfig = require('./webpack.development');
 const productionConfig = require('./webpack.production');
 

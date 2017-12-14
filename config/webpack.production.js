@@ -4,7 +4,10 @@ const parts = require('./webpack.parts');
 /******************* Production config *********************/
 
 const productionConfig = merge([
-
+  parts.devServer({ host: '0.0.0.0', port: 8080 }),
+  parts.babelLoader(),
+  parts.cssLoader(),
+  parts.uglifyJsPlugin(),
 ]);
 
 module.exports = productionConfig;
