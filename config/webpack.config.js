@@ -1,46 +1,18 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const _ = require('lodash');
+const colors = require('colors/safe');
 
-const pkg = require('../package.json');
+const commonConfig = require('./webpack.common');
 const parts = require('./webpack.parts');
-
-const VENDOR_LIBS = _.transform(pkg.dependencies, (result, value, key) => (
-  result.push(key)
-), []);
-
-const commonConfig = merge([
-  {
-    entry:{
-      bundle: '../src/index.js',
-      vendor: VENDOR_LIBS,
-    },
-    output:{
-      path: path.join(__dirname, 'dist'),
-      filename: '[name].[hash].js',
-    },
-    plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        names: ['vendor', 'manifest'],
-      }),
-      new HtmlWebpackPlugin({
-        template: '../src/index.html',
-      }),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      }),
-    ],
-  }
-]);
+const developmentConfig = require('./webpack.development');
+const productionConfig = require('./webpack.production');
 
 
-const productionConfig = merge([]);
+module.exports = (env = process.env.NODE_ENV) => {
+  console.log(colors.yellow('┌----------------------------------┐'));
+  console.log(colors.yellow(`   ENV: ${env}                               `));
+  console.log(colors.yellow(`   URL: http://localhost:3050                `));
+  console.log(colors.yellow('└----------------------------------┘'));
 
-const developmentConfig = merge([]);
-
-module.exports = (env) => {
   if (env === 'production') {
     return merge(commonConfig, productionConfig);
   }

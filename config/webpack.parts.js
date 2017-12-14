@@ -1,6 +1,5 @@
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
-    stats: 'errors-only',
     host,
     port,
     overlay: {
@@ -9,3 +8,22 @@ exports.devServer = ({ host, port } = {}) => ({
     },
   },
 });
+
+exports.babelLoader = () => ({
+  module: {
+    rules: [{
+      use: 'babel-loader',
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+    }],
+  },
+});
+
+exports.cssLoader = () => ({
+  module: {
+    rules: [{
+      use: ['style-loader', 'css-loader'],
+      test: /\.css$/,
+    }],
+  },
+})

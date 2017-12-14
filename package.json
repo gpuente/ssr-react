@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && NODE_ENV=production webpack -p",
     "clean": "rimraf dist",
-    "server": "webpack-dev-server --inline --hot",
+    "server": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
     "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "colors": "^1.1.2",
     "css-loader": "^0.28.7",
     "eslint": "^4.12.1",
     "eslint-config-airbnb": "^16.1.0",
