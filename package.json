@@ -8,8 +8,9 @@
     "build:development": "npm run clean && NODE_ENV=development webpack --config config/webpack.config.js",
     "clean": "rimraf dist",
     "server": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
+    "start": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
     "server:production": "npm run build && http-server-spa dist",
-    "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
+    "deploy": "npm run build && surge --domain rspa.surge.sh -p dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -39,6 +40,7 @@
     "http-server-spa": "^1.2.0",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.0",
+    "surge": "^0.19.0",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5",
     "webpack-merge": "^4.1.1"

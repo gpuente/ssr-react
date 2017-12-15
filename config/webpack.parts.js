@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -39,5 +40,14 @@ exports.devTools = () => ({
 exports.uglifyJsPlugin = () => ({
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
+  ],
+});
+
+exports.html200 = () => ({
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: '200.html',
+    }),
   ],
 });

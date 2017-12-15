@@ -8,6 +8,7 @@ const productionConfig = merge([
   parts.babelLoader(),
   parts.cssLoader(),
   parts.uglifyJsPlugin(),
+  parts.html200(),
 ]);
 
 module.exports = productionConfig;
