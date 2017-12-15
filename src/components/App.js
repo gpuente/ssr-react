@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class App extends Component {
       <div>
         <h1>React App</h1>
         <button className="btn btn-outline-primary" onClick={this.onClickBtn}>Click Me</button>
+        <Link className="link" to="/hello">Hello</Link>
+        <Link className="link" to="/bye">Bye</Link>
       </div>
     );
   }
