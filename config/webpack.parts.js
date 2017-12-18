@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -50,4 +51,12 @@ exports.html200 = () => ({
       filename: '200.html',
     }),
   ],
+});
+
+exports.output = (placeholder = 'hash') => ({
+  output: {
+    path: path.join(__dirname, '../dist'),
+    filename: `[name].[${placeholder}].js`,
+    publicPath: '/',
+  },
 });
