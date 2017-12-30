@@ -2,6 +2,7 @@ body {
   padding: 40px;
   font-size: 20px;
   display: flex;
+  background-image: url("../img/pattern.png");
 }
 
 .btn {
