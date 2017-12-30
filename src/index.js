@@ -6,8 +6,14 @@ import { Provider } from 'react-redux';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Import font-awesome
+import 'font-awesome/css/font-awesome.min.css';
+
+// Import animate.css
+import 'animate.css/animate.min.css';
+
 // Custom Styles
-import '../public/styles/styles.css';
+import '../assets/styles/styles.css';
 
 // Import app routes
 import Routes from './routes';

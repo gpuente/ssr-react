@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
+const path = require('path');
 
 /******************* Development config *********************/
 
@@ -14,6 +15,9 @@ const developmentConfig = merge([
   parts.cssLoader(),
   parts.loadImages({
     options: { limit: 40000, name: 'img/[name].[hash].[ext]' },
+  }),
+  parts.loadFonts({
+    options: { name: './fonts/[name].[ext]' },
   }),
 ]);
 
