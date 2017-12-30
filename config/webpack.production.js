@@ -8,7 +8,7 @@ const productionConfig = merge([
   parts.devServer({ host: '0.0.0.0', port: 8080 }),
   parts.babelLoader(),
   parts.extractCSS({
-    use: 'css-loader',
+    use: ['css-loader', parts.autoprefix()],
   }),
   parts.uglifyJsPlugin(),
   parts.html200(),
