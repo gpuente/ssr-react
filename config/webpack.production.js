@@ -10,6 +10,9 @@ const productionConfig = merge([
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
   }),
+  parts.loadImages({
+    options: { limit: 15000, name: 'img/[name].[hash].[ext]' },
+  }),
   parts.uglifyJsPlugin(),
   parts.html200(),
 ]);

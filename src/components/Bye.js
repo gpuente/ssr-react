@@ -1,5 +1,8 @@
 import React from 'react';
 
 export default () => (
-  <div>Bye!</div>
+  <div>
+    Bye!
+    <img src="../../public/img/small_img.jpeg" alt=""/>
+  </div>
 );
