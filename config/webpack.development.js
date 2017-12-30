@@ -12,6 +12,12 @@ const developmentConfig = merge([
   }),
   parts.babelLoader(),
   parts.cssLoader(),
+  parts.loadImages({
+    options: { limit: 40000, name: 'img/[name].[hash].[ext]' },
+  }),
+  parts.loadFonts({
+    options: { name: './fonts/[name].[ext]' },
+  }),
 ]);
 
 module.exports = developmentConfig;
