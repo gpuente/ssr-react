@@ -1,6 +1,5 @@
 const merge = require('webpack-merge');
 const parts = require('./webpack.parts');
-const path = require('path');
 
 /******************* Development config *********************/
 
