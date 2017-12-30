@@ -2,9 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import Routes from './routes';
-import store from './store';
+// Import Twitter Bootstrap
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Custom Styles
 import '../public/styles/styles.css';
+
+// Import app routes
+import Routes from './routes';
+
+// Import redux store
+import store from './store';
 
 
 ReactDOM.render(
