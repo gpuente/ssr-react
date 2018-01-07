@@ -12,6 +12,5 @@ const config = {
 };
 
 const serverConfig = merge(config, parts.babelLoader());
-console.log(serverConfig);
 
 module.exports = serverConfig;
