@@ -56,7 +56,7 @@ exports.html200 = () => ({
 
 exports.output = (placeholder = 'hash') => ({
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.join(__dirname, '..', 'public'),
     filename: `[name].[${placeholder}].js`,
     publicPath: '/',
   },

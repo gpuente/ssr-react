@@ -9,11 +9,11 @@
     "dev:server": "nodemon --watch build --exec \"node build/server.js\"",
     "build": "npm run clean && NODE_ENV=production webpack -p --config config/webpack.config.js",
     "build:development": "npm run clean && NODE_ENV=development webpack --config config/webpack.config.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf public",
     "server": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
     "start": "NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
-    "server:production": "npm run build && http-server-spa dist",
-    "deploy": "npm run build && surge --domain rspa.surge.sh -p dist",
+    "server:production": "npm run build && http-server-spa public",
+    "deploy": "npm run build && surge --domain your-new-app-name.surge.sh -p public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
