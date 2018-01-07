@@ -9,6 +9,7 @@ const pkg = require('../package.json');
 const EXCLUDE_LIBS = [
   'font-awesome',
   'animate.css',
+  'express',
 ];
 
 const VENDOR_LIBS = _.chain(pkg.dependencies)
