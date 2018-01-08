@@ -1,9 +1,18 @@
+import fs from 'fs';
 import express from 'express';
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-  res.send({ message: 'ok' });
+  fs.readFile('build/template/index.html', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+
+    res.send(data);
+  });
 });
 
 app.listen(3000, () => {
